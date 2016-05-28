@@ -103,9 +103,11 @@ for (model in models)
       print(c(rep,log))
       print(TMR/rep)
       
+      #each experiment save results as one string in .csv
       filename <- paste0("./csv/tmp/model",model,"cost",cost,"_",format(Sys.time(), "%m%d%H%M%S"),"_tmp.csv")
       write.csv(results[rep,],filename)
     }    
+    #all experiments for fixed cost and model in one .csv
     filename <- paste0("./csv/model",model,"cost",cost,"_",format(Sys.time(), "%m%d%H%M%S"),"_final.csv")
     write.csv(results,filename)
   }
